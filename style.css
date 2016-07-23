@@ -1,6 +1,8 @@
 html {
   font-size: 20px;
   text-align: center;
+  background-color: #040404;
+  font-family: 'Inconsolata';
 }
 
 p {
@@ -13,6 +15,11 @@ p {
   color: white;
   display: inline-block;
   padding: 1rem;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Hopefully, the future */
+  cursor: default;
 }
 
 .active {

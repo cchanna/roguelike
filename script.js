@@ -1,42 +1,36 @@
-function hasClass(el, className) {
-  if (el.classList)
-    return el.classList.contains(className)
-  else
-    return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'))
-}
-
-function addClass(el, className) {
-  if (el.classList)
-    el.classList.add(className)
-  else if (!hasClass(el, className)) el.className += " " + className
-}
-
-function removeClass(el, className) {
-  if (el.classList)
-    el.classList.remove(className)
-  else if (hasClass(el, className)) {
-    var reg = new RegExp('(\\s|^)' + className + '(\\s|$)')
-    el.className=el.className.replace(reg, ' ')
+function gameUpdateAndRender(state)
+{
+  for (let i=0; i < state.height; i++)
+  {
+    for (let j=0; j < state.width; j++)
+    {
+      let square = state.tiles[i][j];
+      square.textContent = 'a';
+    }
   }
 }
 
 window.onload = function ()
 {
-  let width = 50;
-  let height = 20;
+  let state = {};
+  state.width = 50;
+  state.height = 40;
+  state.tiles = new Array(state.height);
   let gameWindow = document.getElementById('game');
-  addClass(gameWindow, 'active');
-  for (let i=0; i < height; i++)
+  gameWindow.classList.add('active');
+  for (let i=0; i < state.height; i++)
   {
     let row = document.createElement('div');
-    addClass(row, 'row');
-    for (let j=0; j < width; j++)
+    state.tiles[i] = new Array(state.width);
+    row.classList.add('row');
+    for (let j=0; j < state.width; j++)
     {
       let square = document.createElement('div');
-      square.textContent = 'a';
-      addClass(square, 'square');
+      state.tiles[i][j] = square;
+      square.classList.add('square');
       row.appendChild(square);
     }
     gameWindow.appendChild(row);
   }
+  gameUpdateAndRender(state);
 }
