@@ -10,6 +10,11 @@ function colorToRgbString(color, shade)
   }
 }
 
+function fov(map, mapx, mapy, mapz)
+{
+  return null; // TODO this thing
+}
+
 function init(state)
 {
   function onClickSquare()
