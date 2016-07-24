@@ -1,7 +1,8 @@
 html {
   font-size: 20px;
   text-align: center;
-  background-color: #040404;
+  /*background-color: #040404;*/
+  background-color: black;
   font-family: 'Inconsolata';
 }
 

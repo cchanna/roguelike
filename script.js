@@ -40,7 +40,7 @@ function init(state)
   state.types['wall'].background = {r: 255, g: 255, b: 255};
 
   state.types[''] = {};
-  state.types[''].color = {r: 255, g: 255, b: 255};
+  state.types[''].color = {r: 100, g: 100, b: 100};
   state.types[''].background = {r: 0, g: 0, b: 0};
 
   state.types['player'] = {};
