@@ -20,17 +20,16 @@ p {
   -ms-user-select: none;      /* IE 10+ */
   user-select: none;          /* Hopefully, the future */
   cursor: default;
+  font-family: 'Inconsolata';
 }
 
 .active {
   background-color: black;
 }
 
-.square {
-  font-family: 'Inconsolata';
+#game .row div {
   width: .8rem;
   height: 1rem;
-  color: white;
   display: inline-block;
 }
 
